@@ -1,0 +1,41 @@
+{
+  "name": "deployment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:local": "$(npm bin)/nodemon index.js",
+    "test": "$(npm bin)/jest --coverage"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "pg-promise": "^8.6.4" 
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10",
+    "coveralls": "^3.0.3",
+    "supertest": "^4.0.2",
+    "jest": "^24.5.0"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text",
+      "clover",
+      "html"
+    ],
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**",
+      "!**/__fixtures__/**",
+      "!**/coverage/**",
+      "!index.js"
+    ]
+  }
+}
